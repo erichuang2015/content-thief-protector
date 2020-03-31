@@ -1,0 +1,142 @@
+.tab_container h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+.tab_container a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	width: 99%;
+	margin: 0 auto;
+	padding: 20px;
+	position: relative;
+    border: 5px solid #005cbf;
+}
+.tab_container {    
+    /*background-image: linear-gradient(top, red, red 70%, transparent 70%, transparent 100%);*/
+    background-image: -webkit-linear-gradient(top, #f0f0f0, #ffffff 70px, transparent 19%, transparent 100%);
+}
+
+.tab_container section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+.tab_container_radio_tabs{
+  clear: both;
+  padding-top: 10px;
+  display: none !important;
+}
+
+.tab_container_label_tabs {
+  font-weight: 700;
+  font-size: 14px;
+  display: block;
+  float: left;
+  padding: 1.6em 2.4%;
+  color: #0CE;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  
+  /*background-image: -webkit-linear-gradient(top, #f0f0f0, #f0f0f0, transparent 11%, transparent 100%);*/
+  
+}
+
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9
+{
+  display: block;
+  padding: 20px;
+  background: #fff;
+  color: #999;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: #fff;
+  border: 1px solid #950006;
+  border-radius: 75px;
+  box-shadow: inset 0 3px #0CE;
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: #ee002c;
+}
+
+.tab_container label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@media only screen and (max-width: 930px) {
+  .tab_container label span {
+    font-size: 14px;
+	display: none;
+  }
+  .tab_container label .fa {
+    font-size: 14px;
+	/*display: none;*/
+  }
+  .tab_container [id^="tab"]:checked + label span{
+  display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tab_container label span {
+    display: none;
+  }
+
+  .tab_container label .fa {
+    font-size: 16px;
+  }
+
+  .tab_container {
+    width: 99%;
+	border: 1px solid #f0f0f0;
+  }
+  .tab_container [id^="tab"]:checked + label span{
+  display: none;
+  }
+  .tab_container_label_tabs {
+  width: 10%;
+	}
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
